@@ -1,0 +1,29 @@
+<html>
+   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>     
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/js/sisense.js"></script> <!-- replace with your Sisense server address -->
+    <script type = "text/javascript">
+ 
+        Sisense.connect('http://localhost:8081').then(function(app) { // replace with your Sisense server address
+          app.dashboards.load('5829b46b3452420000047').then(function(dash){ //replace with your dashboard id
+             dash.widgets.get('5dgb3509e914200001265').container = document.getElementById("widget1"); //replace with one of your widgets' id.
+             dash.widgets.get('5ghbdg456446yh00001hb').container = document.getElementById("widget2"); //replace with another of your widgets' id.
+             dash.widgets.get('58b45b4ce6ef16b0b4000042').container = document.getElementById("widget3"); //replace with another of your widgets' id.
+             dash.renderFilters(document.getElementById("filters"));
+             dash.refresh();
+          });
+         });
+      </script>
+    </head>
+    <body> 
+       <div id = "sisenseApp">
+            <div class = "Tab1" id = "widget1" style = "height: 400px; width: 35%; float: left; top: 500px; display: inline; margin-top:30px;"></div>
+            <div class = "Tab1" id = "widget2" style = "height: 400px; width: 40%; float: left; top: 500px; display: inline; margin-top:30px;"></div>
+            <div id = "filters" style = "height: 400px; width: 25%; float: left; top: 80px; left: 0px; display: inline; margin-top:80px;"></div>
+            <div class = "Tab1" id = "widget3" style = "height: 400px; width: 100%; float: left; top: 500px; display: block; margin-top:30px;"></div>
+       </div>
+   </body>
+</html>
