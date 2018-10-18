@@ -9,22 +9,40 @@
         var token = "{{ token|safe }}"
         sessionStorage.token = token
         Sisense.connect('http://18.185.218.25:8081').then(function(app) { // replace with your Sisense server address
-          app.dashboards.load('5bb4695ca12f4112e05fe34b').then(function(dash){ //replace with your dashboard id
-             dash.widgets.get('5bb49a01a12f4112e05fe36b').container = document.getElementById("widget1"); //replace with one of your widgets' id.
-             dash.widgets.get('5bb46c2b325f5d1648f17e40').container = document.getElementById("widget2"); //replace with another of your widgets' id.
-             dash.widgets.get('5bb46cd5a12f4112e05fe34e').container = document.getElementById("widget3"); //replace with another of your widgets' id.
-             dash.renderFilters(document.getElementById("filters"));
-             dash.refresh();
-          });
+       app.dashboards.load('5bb49f9ab0c3d91074c45848').then(function (dash) { //replace with your dashboard id
+                   dash.widgets.get('5bb49fc9b0c3d91074c4584b').container = document.getElementById("widget1"); //replace with one of your widgets' id.
+                   dash.widgets.get('5bb49fe9b0c3d91074c4584d').container = document.getElementById("widget2"); //replace with another of your widgets' id.
+                   dash.widgets.get('5bb4a05d325f5d1648f17e4a').container = document.getElementById("widget3"); //replace with another of your widgets' id.
+                   dash.widgets.get('5bb4a014b0c3d91074c4584f').container = document.getElementById("widget4"); //replace with another of your widgets' id.
+                   dash.widgets.get('5bc46a5b535a271cdc175a64').container = document.getElementById("widget5"); //replace with another of your widgets' id.
+                   dash.widgets.get('5bc46a51535a271cdc175a62').container = document.getElementById("widget6"); //replace with another of your widgets' id.
+                   dash.widgets.get('5bc88ba2535a271cdc17616d').container = document.getElementById("widget7"); //replace with another of your widgets' id.
+                   dash.widgets.get('5bc88c86535a271cdc176179').container = document.getElementById("widget8"); //replace with another of your widgets' id.
+                   dash.widgets.get('5bc88d44535a271cdc176183').container = document.getElementById("widget9"); //replace with another of your widgets' id.
+                   dash.widgets.get('5bc88df30e75c31e749e5615').container = document.getElementById("widget10"); //replace with another of your widgets' id.
+                   dash.widgets.get('5bc88e2d0e75c31e749e561e').container = document.getElementById("widget11"); //replace with another of your widgets' id.
+                   
+                   dash.renderFilters(document.getElementById("filters"));
+                   dash.refresh();
+               });
          });
       </script>
     </head>
     <body>
-       <div id = "sisenseApp">
-            <div class = "Tab1" id = "widget1" style = "height: 400px; width: 35%; float: left; top: 500px; display: inline; margin-top:30px;"></div>
-            <div class = "Tab1" id = "widget2" style = "height: 400px; width: 40%; float: left; top: 500px; display: inline; margin-top:30px;"></div>
-            <div id = "filters" style = "height: 400px; width: 25%; float: left; top: 80px; left: 0px; display: inline; margin-top:80px;"></div>
-            <div class = "Tab1" id = "widget3" style = "height: 400px; width: 100%; float: left; top: 500px; display: block; margin-top:30px;"></div>
-       </div>
+       <div id="sisenseApp">
+             <div id="filters" class="col-xs-12 col-sm-12 col-md-12" style="height: 100px; float: left; "></div>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 200px; background-color: aqua !important;" id="widget1"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 200px; background-color: aqua !important;" id="widget2"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 200px; background-color: aqua !important;" id="widget3"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 200px; background-color: aqua !important;" id="widget4"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 200px; background-color: aqua !important;" id="widget5"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 200px; background-color: aqua !important;" id="widget6"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6" style="height: 200px; background-color: aqua !important;" id="widget7"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6" style="height: 200px; background-color: aqua !important;" id="widget8"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12" style="height: 200px; background-color: aqua !important;" id="widget9"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6" style="height: 200px; background-color: aqua !important;" id="widget10"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6" style="height: 200px; background-color: aqua !important;" id="widget11"></div>
+             
+        </div>
    </body>
 </html>
