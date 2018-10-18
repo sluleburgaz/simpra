@@ -7,7 +7,7 @@
     <script type="text/javascript" src="http://18.185.218.25:8081/js/sisense.js"></script> <!-- replace with your Sisense server address -->
     <script type = "text/javascript">
         var token = {{ token|safe }}
-        sessionStorage.token = token
+        sessionStorage.token = String(token)
         Sisense.connect('http://18.185.218.25:8081').then(function(app) { // replace with your Sisense server address
           app.dashboards.load('5bb4695ca12f4112e05fe34b').then(function(dash){ //replace with your dashboard id
              dash.widgets.get('5bb49a01a12f4112e05fe36b').container = document.getElementById("widget1"); //replace with one of your widgets' id.
